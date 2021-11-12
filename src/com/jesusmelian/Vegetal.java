@@ -24,4 +24,12 @@ public class Vegetal {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Vegetal{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

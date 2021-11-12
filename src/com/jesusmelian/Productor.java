@@ -14,16 +14,36 @@ public class Productor extends Thread{
     @Override
     public void run() {
         Vegetal vege;
+        String[] arrNamesVegetals = new String[]{"lettuce",
+                "cabbage",
+                "onion",
+                "spinach",
+                "potato",
+                "celery",
+                "asparagus",
+                "radish",
+                "broccoli",
+                "artichoke",
+                "tomato",
+                "cucumber",
+                "eggplant",
+                "carrot",
+                "green bean"};
+
+
 
         try {
             for (int i = 0; i < produceUnit; i++) {
-                //SE LE SUMA EL VALOR DE EL CODIGO ASCII Y SERIA EL SIGUIENTE B ,C
-                vege = new Vegetal(name, price);
+                //Agrego un vegetal con un nombre aleatorio y un precio aleatorio
+                vege = new Vegetal(arrNamesVegetals[(int)(Math.random() * 14)], (int)(Math.random() * ((10 + 1))));
+
                 //planto el vegetal
                 buffer.plant(vege);
-                System.out.println("Planted => "+vege.getName());
-                //tiempo que tardamos en plantar
+
+                //tiempo que tardamos en plantar es
                 sleep((int) (Math.random() *this.maxPlantTime));
+                //VEGETAL PLANTADO
+                System.out.println("Planted => "+vege.getName());
             }
         }catch (InterruptedException e){
             e.printStackTrace();
