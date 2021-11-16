@@ -21,7 +21,7 @@ public class Monitor {
         while (full){
             wait();
         }
-        System.out.println("Creando un vegetal"+vege.getName());
+        //System.out.println("Create a new vegetal-> "+vege.getName());
         //Añado el vegetal
         arrVege[index] = vege;
         index++;
@@ -39,7 +39,7 @@ public class Monitor {
         }
         index--;
         Vegetal v = arrVege[index];
-        System.out.println("Selling the vegetable: "+arrVege[index].getName()+ " with a price: " + arrVege[index].getPrice());
+        //System.out.println("Selling the vegetable: "+arrVege[index].toString());
         //Si se vendio un vegetal, ya no esta lleno el almacen
         full=false;
         //si hay mas de un vegetal no esta empty
