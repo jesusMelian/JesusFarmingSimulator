@@ -33,6 +33,10 @@ public class Productor extends Thread{
 
 
         try {
+            if (buffer.getArrVege().length < produceUnit){
+                System.out.println("ERROR EL LAS UNIDADES QUE QUIERE PRODUCIR SUPERA LA CAPACIDAD DEL HUERTO");
+                return;
+            }
             for (int i = 0; i < produceUnit; i++) {
                 //Agrego un vegetal con un nombre aleatorio y un precio aleatorio
                 vege = new Vegetal(arrNamesVegetals[(int)(Math.random() * 14)], (int)(Math.random() * ((10 + 1))));

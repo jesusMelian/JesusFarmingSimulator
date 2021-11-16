@@ -48,4 +48,8 @@ public class Monitor {
         notifyAll();
         return  v;
     }
+
+    public Vegetal[] getArrVege() {
+        return arrVege;
+    }
 }

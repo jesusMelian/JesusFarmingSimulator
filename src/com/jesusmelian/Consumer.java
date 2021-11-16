@@ -16,6 +16,11 @@ public class Consumer extends Thread{
         Vegetal vege;
 
         try {
+            if (buffer.getArrVege().length < expectedUnits){
+                System.out.println("ERROR LAS UNIDADES ESPERADAS SUPERAN LA CAPACIDAD DEL HUERTO");
+                return;
+            }
+
             for (int i = 0; i < expectedUnits; i++) {
                 //Vendo el vegetal
                 vege = buffer.sell();
